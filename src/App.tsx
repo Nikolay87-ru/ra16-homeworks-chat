@@ -1,5 +1,5 @@
 import { MessageHistory } from './components/MessageHistory';
-import { messages } from './messagesData/messages'; 
+import { messages } from './messagesData/messages';
 import './index.css';
 
 function App() {
