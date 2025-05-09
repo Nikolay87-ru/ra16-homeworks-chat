@@ -1,5 +1,14 @@
-import { Message } from './MessageHistory';
+import { Message as MessageType } from './MessageHistory';
 
-const Message = ({ from, message }: { from: { name: string }, message: Message }) => (
-  <div className="message my-message">{message.text}</div>
+const Response = ({ from, message }: { from: { name: string }, message: MessageType }) => (
+  <li className="clearfix">
+    <div className="message-data align-right">
+      <span className="message-data-time">{message.time}</span> &nbsp; &nbsp;
+      <span className="message-data-name">{from.name}</span>
+      <i className="fa fa-circle me"></i>
+    </div>
+    <div className="message other-message float-right">
+      {message.text}
+    </div>
+  </li>
 );
