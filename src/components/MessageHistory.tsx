@@ -2,12 +2,12 @@ import React from 'react';
 import { Message } from './Message';
 import { Response } from './Response';
 import { Typing } from './Typing';
-import { MessageType } from '../messagesData/MessageType';
+import { MessagesType } from '../messagesData/MessagesType';
 
 export type Message = {
   id: string;
   from: { name: string };
-  type: MessageType;
+  type: MessagesType;
   time: string;
   text?: string;
 };
@@ -18,16 +18,14 @@ export const MessageHistory: React.FC<{ list: Message[] }> = ({ list = [] }) => 
   return (
     <ul>
       {list.map((item) =>
-        item.type === MessageType.Message ? (
+        item.type === MessagesType.Message ? (
           <Message key={item.id} from={item.from} message={item} />
-        ) : item.type === MessageType.Response ? (
+        ) : item.type === MessagesType.Response ? (
           <Response key={item.id} from={item.from} message={item} />
-        ) : item.type === MessageType.Typing ? (
+        ) : item.type === MessagesType.Typing ? (
           <Typing key={item.id} from={item.from} message={item} />
         ) : null,
       )}
     </ul>
   );
 };
-
-export default MessageHistory;
