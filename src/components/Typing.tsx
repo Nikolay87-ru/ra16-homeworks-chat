@@ -1,6 +1,6 @@
-import { Message as MessageType } from './MessageHistory';
+import type { Message as MessageType } from './MessageHistory';
 
-const Typing = ({ from, message }: { from: { name: string }; message: MessageType }) => (
+export const Typing = ({ from, message }: { from: { name: string }; message: MessageType }) => (
   <li className="clearfix">
     <div className="message-data">
       <span className="message-data-name">
@@ -10,7 +10,9 @@ const Typing = ({ from, message }: { from: { name: string }; message: MessageTyp
     </div>
     <div className="message my-message">
       <span className="typing-dots">
-        <img src="../src/assets/microsoft-microsoft365.gif" alt="typing" />
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
       </span>
     </div>
   </li>

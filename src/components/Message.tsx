@@ -1,6 +1,6 @@
-import { Message as MessageType } from './MessageHistory';
+import type { Message as MessageType } from './MessageHistory';
 
-const Message = ({ from, message }: { from: { name: string }, message: MessageType }) => (
+export const Message = ({ from, message }: { from: { name: string }; message: MessageType }) => (
   <li className="clearfix">
     <div className="message-data">
       <span className="message-data-name">
@@ -8,8 +8,6 @@ const Message = ({ from, message }: { from: { name: string }, message: MessageTy
       </span>
       <span className="message-data-time">{message.time}</span>
     </div>
-    <div className="message my-message">
-      {message.text}
-    </div>
+    <div className="message my-message">{message.text}</div>
   </li>
 );
